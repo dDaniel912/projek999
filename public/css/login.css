@@ -1,0 +1,213 @@
+:root {
+    --blue: #1a00ab;
+    --blue-dark: #12007a;
+    --gray: #d9d9d9;
+    --white: #fff;
+    --ink: #111;
+    --accent: #1e9be0;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
+html {
+    height: 100%;
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink)
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: 100vh
+}
+
+/* Sisi kiri */
+.left {
+    display: flex;
+    flex-direction: column;
+    background: var(--white)
+}
+
+.brand {
+    background: var(--gray);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px
+}
+
+.brand h1 {
+    margin: 0;
+    font-family: var(--mono);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(18px, 2.6vw, 26px);
+    color: var(--blue);
+    letter-spacing: .02em;
+    text-align: center
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    gap: 20px
+}
+
+/* Ilustrasi monitor */
+.monitor {
+    width: min(310px, 80%)
+}
+
+.screen {
+    aspect-ratio: 310/140;
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 0 0 3px var(--accent);
+    position: relative;
+    display: flex;
+    padding: 14px 16px;
+    gap: 14px
+}
+
+.screen .logo {
+    width: 26px;
+    height: 22px;
+    border: 1px solid var(--ink);
+    flex: none
+}
+
+.screen .divider {
+    width: 1px;
+    background: var(--ink);
+    align-self: stretch;
+    margin-top: -4px;
+    margin-bottom: -4px
+}
+
+.screen .bar {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+    margin-top: 14px
+}
+
+.stand {
+    width: 118px;
+    height: 17px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    background: var(--white);
+    margin: 6px auto 0
+}
+
+.tagline {
+    margin: 0;
+    max-width: 300px;
+    text-align: center;
+    font-family: var(--mono);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4
+}
+
+/* Sisi kanan */
+.right {
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px
+}
+
+form {
+    width: 100%;
+    max-width: 166px;
+    min-width: min(100%, 220px);
+    display: flex;
+    flex-direction: column
+}
+
+label {
+    color: var(--white);
+    font-size: 14px;
+    margin-bottom: 6px
+}
+
+.field {
+    width: 100%;
+    height: 52px;
+    border: 1px solid var(--ink);
+    border-radius: 14px;
+    background: var(--white);
+    padding: 0 16px;
+    font: 400 15px var(--sans);
+    color: var(--ink);
+    margin-bottom: 34px
+}
+
+.field:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px
+}
+
+.btn {
+    align-self: flex-start;
+    height: 34px;
+    padding: 0 15px;
+    border: 1px solid var(--ink);
+    border-radius: 14px;
+    background: var(--white);
+    font-family: var(--mono);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--blue);
+    cursor: pointer;
+    letter-spacing: .04em;
+    margin-top: 2px;
+    transition: background .15s
+}
+
+.btn:hover {
+    background: #e9e6ff
+}
+
+/* Mobile */
+@media (max-width:760px) {
+    .page {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto
+    }
+
+    .hero {
+        padding: 32px 24px
+    }
+
+    .right {
+        padding: 40px 24px
+    }
+}

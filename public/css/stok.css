@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600&amp;display=swap');
+
+:root {
+    --primary: 24 0 173;
+    --accent: 123 97 255;
+}
+
+.tail-container {
+    font-family: 'Inter', system_ui, sans-serif;
+}
+
+.logo-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-item {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover {
+    background-color: rgb(24 0 173);
+    transform: translateX(8px);
+}
+
+.nav-item-active {
+    background-color: rgb(24 0 173);
+    color: white;
+    border-left: 4px solid rgb(123 97 255);
+}
+
+.sidebar-bg {
+    background: linear-gradient(180deg, rgb(24 0 173) 0%, rgb(37 99 235) 100%);
+}
+
+.logo-container {
+    position: relative;
+}
+
+.logo-container::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, rgb(123 97 255), transparent);
+    border-radius: 9999px;
+}
+
+.card-big {
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card-big:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.card-big-active {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.lks-btn {
+    transition: all 0.2s;
+}
+
+.lks-btn:hover {
+    background-color: #1800ad;
+    transform: translateY(-1px);
+}
